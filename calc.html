@@ -1,29 +1,49 @@
 <!DOCTYPE html>
- <meta charset="utf-8">
- <html>
+<meta charset="utf-8">
+<html>
+ <head>
+  <title>電卓</title>
   <link rel="stylesheet" href="calc.css">
-  <body>
- <div>電卓</div>
- <input style="font-size: 28px; text-align: right;" readonly/><br />
- <script src="calc.js"></script>
- <button onclick="append('7')">7</button>
- <button onclick="append('8')">8</button>
- <button onclick="append('9')">9</button>
-<button onclick="append('+')">+</button><br />
- 
- <button onclick="append('4')">4</button>
- <button onclick="append('5')">5</button>
- <button onclick="append('6')">6</button>
- <button onclick="append('-')">-</button><br />
- 
- <button onclick="append('1')">1</button>
- <button onclick="append('2')">2</button>
- <button onclick="append('3')">3</button>
- <button onclick="append('*')">✖︎</button><br />
- 
- <button onclick="append('0')">0</button>
- <button onclick="calc()">=</button>
- <button onclick="update(' ')">clear</button>
- <button onclick="append('/')">÷</button>
- 
- </body></html>
+  <script src="calc.js" charset="utf-8"></script>
+ </head>
+ <body>
+<div class="wrapper">
+  <h1 id="header">電卓</h1>
+  <div id="calc">
+    <div id="display">
+      <input readonly id="result" type="text" value="0">
+    </div>
+    <table id="button">
+      <tr>
+        <td colspan="2" id="clear"><button onclick="c_click()">AC</button></td>
+        <td><button onclick="ope_click(this.innerHTML)">%</button></td>
+        <td><button onclick="ope_click(this.innerHTML)">÷</button></td>
+      </tr>
+    <tr>
+      <td><button onclick="num_click(this.innerHTML)">7</button></td>
+      <td><button onclick="num_click(this.innerHTML)">8</button></td>
+      <td><button onclick="num_click(this.innerHTML)">9</button></td>
+      <td><button onclick="ope_click(this.innerHTML)">×</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="num_click(this.innerHTML)">4</button></td>
+      <td><button onclick="num_click(this.innerHTML)">5</button></td>
+      <td><button onclick="num_click(this.innerHTML)">6</button></td>
+      <td><button onclick="ope_click(this.innerHTML)">-</button></td>
+    </tr>
+    <tr>
+      <td><button onclick="num_click(this.innerHTML)">1</button></td>
+      <td><button onclick="num_click(this.innerHTML)">2</button></td>
+      <td><button onclick="num_click(this.innerHTML)">3</button></td>
+      <td><button onclick="ope_click(this.innerHTML)">+</button></td>
+    </tr>
+    <tr>
+      <td colspan="2" id="zero"><button onclick="num_click(this.innerHTML)">0</button></td>
+      <td><button onclick="num_click(this.innerHTML)">.</button></td>
+      <td><button onclick="equal_click()">=</button></td>
+    </tr>
+  </table>
+  </div>
+</div>
+    </body>
+    </html>
