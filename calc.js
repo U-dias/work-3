@@ -25,6 +25,10 @@ function num_click(val){
     result.value = "0.";//0.を返す
   }else if(result.value == "0"){//0以外を代入
     result.value = val;//入力された値を返す
+  }else if(result.value == "" && val == "."){
+    result.value = ""
+  }else if(result.value.endsWith(".") && val == "."){
+    
   }else{
     result.value += val;
   }
@@ -42,6 +46,7 @@ function ope_click(val){
     //入力された値を加えて代入
   }
 }
+
 
 //イコールキー入力//
 function equal_click(){
@@ -62,7 +67,6 @@ function equal_click(){
 function is_ope_last(){
   return ["+","-","×","÷","%"].includes(result.value.toString().slice(-1));
 }
-
 
 
 
